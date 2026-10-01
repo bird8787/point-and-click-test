@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm0c8tnxpnqxm"]
 
-[ext_resource type="Texture2D" uid="uid://dtqa5d1iodytx" path="res://pexels-jvdm-1457842.jpg" id="1_r2lve"]
+[ext_resource type="Texture2D" uid="uid://dtqa5d1iodytx" path="res://assets/rooms/livingroom.jpg" id="1_r2lve"]
 [ext_resource type="PackedScene" uid="uid://h7fcbg3qd4va" path="res://link.tscn" id="2_mcdqq"]
 [ext_resource type="PackedScene" uid="uid://dlwy33wp7ykha" path="res://interactable item.tscn" id="3_mcdqq"]
 [ext_resource type="PackedScene" uid="uid://cq1ict8dgnhfv" path="res://text box.tscn" id="4_5chq5"]
@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_mcdqq")
 position = Vector2(845, 385)
 scale = Vector2(0.467, 0.467)
 text = "[b][font_size=26]It's a pillow[/font_size]"
-textbox = NodePath("../CanvasLayer")
+textbox = NodePath("../text box")
 
 [node name="Polygon2D3" type="Polygon2D" parent="Pillow"]
 position = Vector2(1.3630505, -0.057861328)
@@ -49,7 +49,7 @@ position = Vector2(223, 308.99997)
 rotation = -0.01620038
 scale = Vector2(1.189, 0.699)
 text = "It's a TV"
-textbox = NodePath("../CanvasLayer")
+textbox = NodePath("../text box")
 
 [node name="Polygon2D" type="Polygon2D" parent="TV"]
 position = Vector2(-7.261442, 1.245058)
@@ -60,7 +60,7 @@ texture_scale = Vector2(0.99, 0.99)
 polygon = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.6204, 1426.9744, 447.2503, 1479.757)
 uv = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.6204, 1426.9744, 447.2503, 1479.757)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("4_5chq5")]
+[node name="text box" parent="." instance=ExtResource("4_5chq5")]
 
 [node name="mouse_collider" parent="." instance=ExtResource("5_mtn7p")]
 unique_name_in_owner = true
