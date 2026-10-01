@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq1ict8dgnhfv"]
+
+[ext_resource type="Script" uid="uid://7ccgongrly15" path="res://text_box.gd" id="1_27i1d"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_27i1d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.069000006
+anchor_bottom = 0.09200001
+offset_left = 110.0
+offset_top = 505.0
+offset_right = 961.51196
+offset_bottom = 558.384
+bbcode_enabled = true
+text = "[rainbow]gay"

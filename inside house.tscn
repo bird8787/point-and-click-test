@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm0c8tnxpnqxm"]
+
+[ext_resource type="Texture2D" uid="uid://dtqa5d1iodytx" path="res://pexels-jvdm-1457842.jpg" id="1_r2lve"]
+[ext_resource type="PackedScene" uid="uid://h7fcbg3qd4va" path="res://link.tscn" id="2_mcdqq"]
+[ext_resource type="PackedScene" uid="uid://dlwy33wp7ykha" path="res://interactable item.tscn" id="3_mcdqq"]
+[ext_resource type="PackedScene" uid="uid://cq1ict8dgnhfv" path="res://text box.tscn" id="4_5chq5"]
+[ext_resource type="PackedScene" uid="uid://demvaqi1sakpq" path="res://mouse_collider.tscn" id="5_mtn7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcdqq"]
+size = Vector2(1349.1232, 768.3502)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PexelsJvdm1457842" type="Sprite2D" parent="."]
+position = Vector2(577, 323)
+scale = Vector2(0.2729939, 0.25386697)
+texture = ExtResource("1_r2lve")
+
+[node name="Area2D" parent="." instance=ExtResource("2_mcdqq")]
+position = Vector2(903, 228)
+scale = Vector2(0.27721724, 0.27721733)
+house_scene = "res://main.tscn"
+
+[node name="Icon" parent="Area2D" index="0"]
+visible = false
+position = Vector2(337.28067, 43.287354)
+scale = Vector2(8.933654, 5.241826)
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(216.43674, -10.821831)
+shape = SubResource("RectangleShape2D_mcdqq")
+
+[node name="Pillow" parent="." node_paths=PackedStringArray("textbox") instance=ExtResource("3_mcdqq")]
+position = Vector2(845, 385)
+scale = Vector2(0.467, 0.467)
+text = "[b][font_size=26]It's a pillow[/font_size]"
+textbox = NodePath("../CanvasLayer")
+
+[node name="Polygon2D3" type="Polygon2D" parent="Pillow"]
+position = Vector2(1.3630505, -0.057861328)
+scale = Vector2(0.6475993, 0.5760336)
+offset = Vector2(-3123.9038, -1536.7006)
+texture = ExtResource("1_r2lve")
+polygon = PackedVector2Array(3273.0042, 1715.2346, 3257.312, 1657.1736, 3287.127, 1486.1292, 3244.7583, 1354.3151, 3123.9287, 1429.6375, 3032.914, 1332.346, 2970.1455, 1470.437, 2935.6228, 1671.2966, 2916.7922, 1691.6964)
+uv = PackedVector2Array(3273.0042, 1715.2346, 3257.312, 1657.1736, 3287.127, 1486.1292, 3244.7583, 1354.3151, 3123.9287, 1429.6375, 3032.914, 1332.346, 2970.1455, 1470.437, 2935.6228, 1671.2966, 2916.7922, 1691.6964)
+
+[node name="TV" parent="." node_paths=PackedStringArray("textbox") instance=ExtResource("3_mcdqq")]
+position = Vector2(223, 308.99997)
+rotation = -0.01620038
+scale = Vector2(1.189, 0.699)
+text = "It's a TV"
+textbox = NodePath("../CanvasLayer")
+
+[node name="Polygon2D" type="Polygon2D" parent="TV"]
+position = Vector2(-7.261442, 1.245058)
+scale = Vector2(0.22882079, 0.36448085)
+offset = Vector2(-804.04315, -1251.4812)
+texture = ExtResource("1_r2lve")
+texture_scale = Vector2(0.99, 0.99)
+polygon = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.6204, 1426.9744, 447.2503, 1479.757)
+uv = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.6204, 1426.9744, 447.2503, 1479.757)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_5chq5")]
+
+[node name="mouse_collider" parent="." instance=ExtResource("5_mtn7p")]
+unique_name_in_owner = true
+
+[editable path="Area2D"]

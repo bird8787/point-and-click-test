@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlwy33wp7ykha"]
+
+[ext_resource type="Script" uid="uid://p5fk6gjr76eq" path="res://pillow.gd" id="2_7l0no"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nopt"]
+size = Vector2(165.113, 147.07657)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.27721724, 0.27721733)
+script = ExtResource("2_7l0no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6nopt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
