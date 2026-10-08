@@ -16,10 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_oerka")
 
 [node name="Inventory" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1134.0
 offset_bottom = 358.0
-text = "ddddd"
 
 [node name="GridContainer" type="GridContainer" parent="Inventory"]
 layout_mode = 0

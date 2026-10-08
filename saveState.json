@@ -1,9 +1,9 @@
 {
 	"inventory": {
-		"puzzlePieces": 2,
+		"puzzlePieces": 0,
 		"items": [
 			{
-				"name": "pillow",
+				"name": "blanket",
 				"quantity": 8
 			},
 			{
