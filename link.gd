@@ -1,12 +1,12 @@
 extends Area2D
-@export var house_scene="res://inside house.tscn"
+@export var house_scene: PackedScene
 @onready var arrow = load("res://icon.svg")
 @onready var caine = load("res://pexels-jvdm-1457842.jpg")
 func _input_event(viewport,event,shape_idx):
 	#print(event)
 	if(event.button_mask==1 and event.is_pressed()):
 		print("sucess")
-		get_tree().change_scene_to_file(house_scene)
+		get_tree().change_scene_to_packed(house_scene)
 
 
 #func _on_area_entered(area: Area2D) -> void:

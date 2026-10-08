@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm0c8tnxpnqxm"]
+[gd_scene load_steps=10 format=3 uid="uid://bm0c8tnxpnqxm"]
 
 [ext_resource type="Texture2D" uid="uid://dtqa5d1iodytx" path="res://assets/rooms/livingroom.jpg" id="1_r2lve"]
 [ext_resource type="PackedScene" uid="uid://h7fcbg3qd4va" path="res://link.tscn" id="2_mcdqq"]
+[ext_resource type="PackedScene" uid="uid://yg6c86b71trs" path="res://main.tscn" id="3_01rjr"]
 [ext_resource type="PackedScene" uid="uid://dlwy33wp7ykha" path="res://interactable item.tscn" id="3_mcdqq"]
 [ext_resource type="PackedScene" uid="uid://cq1ict8dgnhfv" path="res://text box.tscn" id="4_5chq5"]
 [ext_resource type="PackedScene" uid="uid://demvaqi1sakpq" path="res://mouse_collider.tscn" id="5_mtn7p"]
+[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="7_kos6g"]
+[ext_resource type="PackedScene" uid="uid://bops3nddw0b8f" path="res://Gui.tscn" id="8_3dyd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcdqq"]
 size = Vector2(1349.1232, 768.3502)
@@ -17,9 +20,10 @@ scale = Vector2(0.2729939, 0.25386697)
 texture = ExtResource("1_r2lve")
 
 [node name="Area2D" parent="." instance=ExtResource("2_mcdqq")]
+visible = false
 position = Vector2(903, 228)
 scale = Vector2(0.27721724, 0.27721733)
-house_scene = "res://main.tscn"
+house_scene = ExtResource("3_01rjr")
 
 [node name="Icon" parent="Area2D" index="0"]
 visible = false
@@ -61,8 +65,18 @@ polygon = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.62
 uv = PackedVector2Array(445.82367, 1023.2581, 1197.6204, 1036.0972, 1197.6204, 1426.9744, 447.2503, 1479.757)
 
 [node name="text box" parent="." instance=ExtResource("4_5chq5")]
+visible = false
 
 [node name="mouse_collider" parent="." instance=ExtResource("5_mtn7p")]
 unique_name_in_owner = true
+
+[node name="Button" parent="." instance=ExtResource("7_kos6g")]
+offset_left = 773.0
+offset_top = 117.0
+offset_right = 1151.0
+offset_bottom = 333.0
+scene_to_change_to = "res://main.tscn"
+
+[node name="Gui" parent="." instance=ExtResource("8_3dyd2")]
 
 [editable path="Area2D"]

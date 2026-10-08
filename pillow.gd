@@ -7,7 +7,6 @@ extends Area2D
 		#textbox.change_text(text)
 
 func _input_event(viewport,event,shape_idx):
-	print(event)
 	if(event.button_mask==1 and event.is_pressed()):
 		print("text")
 		textbox.change_text(text)

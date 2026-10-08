@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bops3nddw0b8f"]
+
+[ext_resource type="Script" uid="uid://cs42wwsq4mwrr" path="res://Gui.gd" id="1_oerka"]
+
+[node name="Gui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oerka")
+
+[node name="Inventory" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1134.0
+offset_bottom = 358.0
+text = "ddddd"
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 18.0
+offset_right = 1131.0
+offset_bottom = 318.0
+columns = 2
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="Inventory/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect3" type="ColorRect" parent="Inventory/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect4" type="ColorRect" parent="Inventory/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 573.0
+offset_right = 372.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 48
+text = "Open Inventory"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
