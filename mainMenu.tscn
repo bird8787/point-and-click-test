@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rcaehhv1m18u"]
+
+[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="1_j5mlu"]
+[ext_resource type="Script" uid="uid://cv3aj7ab36sm" path="res://createSaveState.gd" id="1_w7d22"]
+[ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://change_scene_menu.gd" id="2_83s16"]
+
+[node name="ympstartscene" type="Node2D" unique_id=674439306]
+script = ExtResource("1_w7d22")
+
+[node name="Button" parent="." unique_id=423805827 instance=ExtResource("1_j5mlu")]
+offset_left = 26.0
+offset_top = 35.0
+offset_right = 1103.0
+offset_bottom = 100.0
+theme = null
+text = "Enter Game"
+script = ExtResource("2_83s16")
+scene_to_change_to = "res://Rooms/outSide.tscn"

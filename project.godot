@@ -15,9 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="point and click test"
-run/main_scene="res://Rooms/outSide.tscn"
-config/use_custom_user_dir=true
-config/custom_user_dir_name="res://user"
+run/main_scene="uid://rcaehhv1m18u"
+config/custom_user_dir_name="res://User/"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

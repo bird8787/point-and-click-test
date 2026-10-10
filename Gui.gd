@@ -26,9 +26,10 @@ func getJsonAsDict(PATH: String):
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
 func storeInventory(PATH: String):
-	var json_string = JSON.stringify(inventory)
-	var file = FileAccess.open(PATH, FileAccess.WRITE)
-	var save_state = getJsonAsDict("point-and-click-test/saveState.json")
+	var json_string = inventory
+	var save_state = getJsonAsDict("user://saveState.json")
+	var file = FileAccess.open(PATH, FileAccess.WRITE_READ)
+	print(save_state)
 	save_state["inventory"] = json_string
 	file.store_string(JSON.stringify(save_state))
 	pass
@@ -67,7 +68,7 @@ func to_binary(intValue: int) -> String:
 func is_bit_active(index: int) -> bool:
 	return (int(inventory["puzzlePieces"]) & (1 << index)) > 0
 
-var inventory = getJsonAsDict("point-and-click-test/saveState.json")["inventory"]
+var inventory = getJsonAsDict("user://saveState.json")["inventory"]
 
 func _ready() -> void:
 	inventoryLabel.visible = false
