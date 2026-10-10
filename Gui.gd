@@ -54,11 +54,7 @@ func addItemToInventory(item: Dictionary): #grackle script
 	for x in len(inventory["items"]):
 		#do stuff
 		if inventoryToSetTo[x]["name"] == item["name"]:
-			if inventoryToSetTo[x]["quantity"] > item["quantity"] - 1:
-				print("item " + item["name"] + " was empty")
-			else:
-				inventoryToSetTo[x]["quantity"] = inventoryToSetTo[x]["quantity"] + 1
-				print("gave " + item["name"] + " to player")
+			print("item " + item["name"] + " was empty")
 			foundMatch = true
 			
 
