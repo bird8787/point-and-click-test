@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bm0c8tnxpnqxm"]
+
+[ext_resource type="Texture2D" uid="uid://dtqa5d1iodytx" path="res://assets/rooms/livingroom.jpg" id="1_r2lve"]
+[ext_resource type="PackedScene" uid="uid://bmt1f0lplfs4h" path="res://item.tscn" id="5_y7s1v"]
+[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="7_kos6g"]
+[ext_resource type="PackedScene" uid="uid://bops3nddw0b8f" path="res://Gui.tscn" id="8_3dyd2"]
+
+[node name="Node2D" type="Node2D" unique_id=1124572050]
+
+[node name="PexelsJvdm1457842" type="Sprite2D" parent="." unique_id=1738569940]
+position = Vector2(577, 323)
+scale = Vector2(0.2729939, 0.25386697)
+texture = ExtResource("1_r2lve")
+
+[node name="Button" parent="." unique_id=1459976727 node_paths=PackedStringArray("gui_node") instance=ExtResource("7_kos6g")]
+offset_left = 773.0
+offset_top = 117.0
+offset_right = 1151.0
+offset_bottom = 333.0
+scene_to_change_to = "res://Rooms/outSide.tscn"
+gui_node = NodePath("../Gui")
+
+[node name="Gui" parent="." unique_id=1702797095 instance=ExtResource("8_3dyd2")]
+
+[node name="TV" parent="." unique_id=283229152 node_paths=PackedStringArray("gui_node") groups=["Persist"] instance=ExtResource("5_y7s1v")]
+offset_left = 116.0
+offset_top = 247.0
+offset_right = 326.0
+offset_bottom = 369.0
+itemName = "tv"
+number = 1
+gui_node = NodePath("../Gui")
+
+[node name="Pillow" parent="." unique_id=1255802542 node_paths=PackedStringArray("gui_node") instance=ExtResource("5_y7s1v")]
+offset_left = 799.0
+offset_top = 340.0
+offset_right = 893.0
+offset_bottom = 437.0
+itemName = "Pillow"
+number = 1
+gui_node = NodePath("../Gui")

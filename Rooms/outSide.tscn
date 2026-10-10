@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://yg6c86b71trs"]
+
+[ext_resource type="Texture2D" uid="uid://djyamxe5mbmy4" path="res://assets/rooms/bliss.jpg" id="1_7mycd"]
+[ext_resource type="Script" uid="uid://bwbpy0qnu630i" path="res://change_scene.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bops3nddw0b8f" path="res://Gui.tscn" id="3_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=1928082867]
+
+[node name="Bliss" type="Sprite2D" parent="." unique_id=1287995824]
+position = Vector2(596, 320)
+scale = Vector2(2.8770492, 2.8770492)
+texture = ExtResource("1_7mycd")
+
+[node name="Gui" parent="." unique_id=1374064453 instance=ExtResource("3_h2yge")]
+
+[node name="ChangeScene" type="Button" parent="." unique_id=1813274511 node_paths=PackedStringArray("gui_node")]
+offset_left = 569.0
+offset_top = 309.0
+offset_right = 577.0
+offset_bottom = 317.0
+text = "Go To House"
+script = ExtResource("1_lquwl")
+scene_to_change_to = "res://Rooms/insideHouse.tscn"
+gui_node = NodePath("../Gui")
+
+[connection signal="pressed" from="ChangeScene" to="ChangeScene" method="_on_pressed"]

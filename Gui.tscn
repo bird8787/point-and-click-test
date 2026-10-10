@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bops3nddw0b8f"]
+[gd_scene format=3 uid="uid://bops3nddw0b8f"]
 
 [ext_resource type="Script" uid="uid://cs42wwsq4mwrr" path="res://Gui.gd" id="1_oerka"]
 
-[node name="Gui" type="Control"]
+[node name="Gui" type="Control" unique_id=1915369184]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,13 +15,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oerka")
 
-[node name="Inventory" type="RichTextLabel" parent="."]
-visible = false
+[node name="Inventory" type="RichTextLabel" parent="." unique_id=969181818]
 layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
 offset_right = 1134.0
 offset_bottom = 358.0
 
-[node name="GridContainer" type="GridContainer" parent="Inventory"]
+[node name="GridContainer" type="GridContainer" parent="Inventory" unique_id=1755209712]
 layout_mode = 0
 offset_left = 831.0
 offset_top = 18.0
@@ -29,32 +30,32 @@ offset_right = 1131.0
 offset_bottom = 318.0
 columns = 2
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/GridContainer"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/GridContainer" unique_id=1985956094]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect2" type="ColorRect" parent="Inventory/GridContainer"]
+[node name="ColorRect2" type="ColorRect" parent="Inventory/GridContainer" unique_id=801240398]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect3" type="ColorRect" parent="Inventory/GridContainer"]
+[node name="ColorRect3" type="ColorRect" parent="Inventory/GridContainer" unique_id=1699563579]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect4" type="ColorRect" parent="Inventory/GridContainer"]
+[node name="ColorRect4" type="ColorRect" parent="Inventory/GridContainer" unique_id=940777633]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1128063704]
 layout_mode = 1
-offset_left = 2.0
-offset_top = 573.0
-offset_right = 372.0
-offset_bottom = 648.0
+offset_left = 12.0
+offset_top = 561.0
+offset_right = 382.0
+offset_bottom = 636.0
 theme_override_font_sizes/font_size = 48
 text = "Open Inventory"
 

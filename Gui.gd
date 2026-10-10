@@ -25,6 +25,29 @@ func getJsonAsDict(PATH: String):
 	else:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
+func storeInventory(PATH: String):
+	var json_string = JSON.stringify(inventory)
+	var file = FileAccess.open(PATH, FileAccess.WRITE)
+	var save_state = getJsonAsDict("point-and-click-test/saveState.json")
+	save_state["inventory"] = json_string
+	file.store_string(JSON.stringify(save_state))
+	pass
+
+func addItemToInventory(item: Dictionary): #grackle script
+	var inventoryToSetTo = inventory["items"]
+	
+	var foundMatch = false
+	for x in len(inventory["items"]):
+		#do stuff
+		if inventoryToSetTo[x]["name"] == item["name"]:
+			inventoryToSetTo[x]["quantity"] = inventoryToSetTo[x]["quantity"] + item["quantity"]
+			foundMatch = true
+	if not foundMatch:
+		inventoryToSetTo.append(item)
+	inventory["items"] = inventoryToSetTo
+	generateInventory()
+	pass
+
 class PuzzlePieces:
 	var mask
 	var pieces
@@ -33,6 +56,7 @@ class PuzzlePieces:
 		mask = 1 << index
 		if not pieces & mask:
 			pieces = pieces | mask
+
 func to_binary(intValue: int) -> String:
 	var bin_str: String = ""
 	while intValue > 0:
@@ -42,17 +66,17 @@ func to_binary(intValue: int) -> String:
 	
 func is_bit_active(index: int) -> bool:
 	return (int(inventory["puzzlePieces"]) & (1 << index)) > 0
-class Item:
-	var name: String
-	var quantity: int
-	func _init(n,q):
-		name = n
-		quantity = q
-var inventory = getJsonAsDict("res://saveState.json")["inventory"]
 
-func _ready():
+var inventory = getJsonAsDict("point-and-click-test/saveState.json")["inventory"]
+
+func _ready() -> void:
+	inventoryLabel.visible = false
+	generateInventory()
+
+
+func generateInventory():
 	var screenstuff = ""
-
+	
 	for item in inventory["items"]:
 		#do stuff
 		screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
@@ -62,8 +86,7 @@ func _ready():
 	puzzlePiece3.color = colors[int(is_bit_active(2))]
 	puzzlePiece4.color = colors[int(is_bit_active(3))]
 	
-	screenstuff = screenstuff + to_binary(inventory["puzzlePieces"]).lpad(8, "0") + "\n"
-	inventoryLabel.append_text(screenstuff)
+	inventoryLabel.text = screenstuff
 
 
 func _on_inventory_open() -> void:

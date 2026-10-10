@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlwy33wp7ykha"]
+[gd_scene format=3 uid="uid://dlwy33wp7ykha"]
 
-[ext_resource type="Script" uid="uid://p5fk6gjr76eq" path="res://pillow.gd" id="2_7l0no"]
+[ext_resource type="Script" uid="uid://p5fk6gjr76eq" path="res://getItem.gd" id="2_7l0no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nopt"]
 size = Vector2(165.113, 147.07657)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://rcaehhv1m18u"]
+[gd_scene format=3 uid="uid://rcaehhv1m18u"]
 
 [ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="1_j5mlu"]
-[ext_resource type="PackedScene" uid="uid://yg6c86b71trs" path="res://main.tscn" id="2_g0t0l"]
+[ext_resource type="PackedScene" uid="uid://yg6c86b71trs" path="res://Rooms/outSide.tscn" id="2_g0t0l"]
 
 [node name="ympstartscene" type="Node2D"]
 
