@@ -3,27 +3,55 @@
 [ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="1_j5mlu"]
 [ext_resource type="Script" uid="uid://cv3aj7ab36sm" path="res://createSaveState.gd" id="1_w7d22"]
 [ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://change_scene_menu.gd" id="2_83s16"]
+[ext_resource type="Texture2D" uid="uid://cdgwbcj6lih1w" path="res://assets/rooms/mainMenu.jpg" id="2_c3jr6"]
 [ext_resource type="Script" uid="uid://cm2t4ngopmqdx" path="res://clear-save.gd" id="4_wc2lj"]
+[ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://main_menu.tres" id="4_wked4"]
 
 [node name="ympstartscene" type="Node2D" unique_id=674439306]
 script = ExtResource("1_w7d22")
 
-[node name="Button" parent="." unique_id=423805827 instance=ExtResource("1_j5mlu")]
-offset_left = 26.0
-offset_top = 35.0
-offset_right = 1103.0
-offset_bottom = 100.0
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=516825046]
+position = Vector2(564, 562)
+scale = Vector2(1.5206718, 1.5206718)
+texture = ExtResource("2_c3jr6")
+
+[node name="Control" type="Control" parent="." unique_id=1071439810]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1667787286]
+custom_minimum_size = Vector2(200.375, 0)
+offset_left = 66.0
+offset_right = 318.0
+offset_bottom = 649.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("4_wked4")
+alignment = 1
+
+[node name="Button" parent="VBoxContainer" unique_id=423805827 instance=ExtResource("1_j5mlu")]
+layout_mode = 2
+size_flags_vertical = 4
 theme = null
 text = "Enter Game"
 script = ExtResource("2_83s16")
 scene_to_change_to = "res://Rooms/outSide.tscn"
 
-[node name="Button2" type="Button" parent="." unique_id=2023154024]
-offset_left = 387.0
-offset_top = 125.0
-offset_right = 739.0
-offset_bottom = 277.0
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2023154024]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_wked4")
 text = "Clear Save"
 script = ExtResource("4_wc2lj")
 
-[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[node name="Label" type="Label" parent="." unique_id=949098495]
+offset_left = 26.0
+offset_top = 199.0
+offset_right = 484.0
+offset_bottom = 266.0
+theme = ExtResource("4_wked4")
+text = "Point And Click Test"
+
+[connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]

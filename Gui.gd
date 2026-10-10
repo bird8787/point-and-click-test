@@ -81,6 +81,8 @@ func generateInventory():
 	for item in inventory["items"]:
 		#do stuff
 		screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
+	if screenstuff == "":
+		screenstuff = "you own NOTHING"
 	#Render Puzzle Piece
 	puzzlePiece1.color = colors[int(is_bit_active(0))]
 	puzzlePiece2.color = colors[int(is_bit_active(1))]
