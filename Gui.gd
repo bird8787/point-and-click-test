@@ -11,6 +11,13 @@ extends Control
 @onready var puzzlePiece4: ColorRect = $Inventory/GridContainer/ColorRect4
 #colors
 @onready 	var colors = ["#00000000","#ffffffff"]
+
+@onready var rooms = [
+	"res://Rooms/outSide.tscn",
+	"res://Rooms/insideHouse.tscn"
+
+]
+
 func getJsonAsDict(PATH: String):
 	var file = FileAccess.open(PATH, FileAccess.READ)
 	var json_string = file.get_as_text()
@@ -25,12 +32,18 @@ func getJsonAsDict(PATH: String):
 	else:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
-func storeInventory(PATH: String):
+func autoSave():
+	var PATH = "user://saveState.json"
 	var json_string = inventory
 	var save_state = getJsonAsDict("user://saveState.json")
 	var file = FileAccess.open(PATH, FileAccess.WRITE_READ)
 	print(save_state)
 	save_state["inventory"] = json_string
+	
+	var scene_path = get_parent().get_scene_file_path()
+	print(rooms.find(scene_path, 0))
+	print(scene_path)
+	save_state["room"] = rooms.find(scene_path, 0)
 	file.store_string(JSON.stringify(save_state))
 	pass
 
@@ -99,3 +112,9 @@ func _on_inventory_open() -> void:
 	puzzlePiece2.color = colors[int(is_bit_active(1))]
 	puzzlePiece3.color = colors[int(is_bit_active(2))]
 	puzzlePiece4.color = colors[int(is_bit_active(3))]
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		# Call your function here
+		autoSave()
+		get_tree().quit()  # Proceed to quit the game
