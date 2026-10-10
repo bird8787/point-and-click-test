@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cs42wwsq4mwrr" path="res://Gui.gd" id="1_oerka"]
 
+[sub_resource type="Theme" id="Theme_oerka"]
+
 [node name="Gui" type="Control" unique_id=1915369184]
 layout_mode = 3
 anchors_preset = 15
@@ -19,14 +21,16 @@ script = ExtResource("1_oerka")
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
-offset_right = 1134.0
+offset_right = 1133.0
 offset_bottom = 358.0
+mouse_filter = 1
+theme = SubResource("Theme_oerka")
 
 [node name="GridContainer" type="GridContainer" parent="Inventory" unique_id=1755209712]
 layout_mode = 0
-offset_left = 831.0
+offset_left = 786.0
 offset_top = 18.0
-offset_right = 1131.0
+offset_right = 1086.0
 offset_bottom = 318.0
 columns = 2
 
@@ -59,5 +63,5 @@ offset_bottom = 636.0
 theme_override_font_sizes/font_size = 48
 text = "Open Inventory"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

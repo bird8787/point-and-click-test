@@ -12,6 +12,8 @@ position = Vector2(577, 323)
 scale = Vector2(0.2729939, 0.25386697)
 texture = ExtResource("1_r2lve")
 
+[node name="Gui" parent="." unique_id=1702797095 instance=ExtResource("8_3dyd2")]
+
 [node name="Button" parent="." unique_id=1459976727 node_paths=PackedStringArray("gui_node") instance=ExtResource("7_kos6g")]
 offset_left = 773.0
 offset_top = 117.0
@@ -19,8 +21,6 @@ offset_right = 1151.0
 offset_bottom = 333.0
 scene_to_change_to = "res://Rooms/outSide.tscn"
 gui_node = NodePath("../Gui")
-
-[node name="Gui" parent="." unique_id=1702797095 instance=ExtResource("8_3dyd2")]
 
 [node name="TV" parent="." unique_id=283229152 node_paths=PackedStringArray("gui_node") groups=["Persist"] instance=ExtResource("5_y7s1v")]
 offset_left = 116.0

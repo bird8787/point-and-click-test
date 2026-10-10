@@ -1,17 +1,5 @@
-extends Node2D
+extends Button
 
-
-
-
-func _ready():
-	var save_template = FileAccess.open("res://User/saveState.json", FileAccess.READ)
-	var file = FileAccess.open("user://saveState.json", FileAccess.READ)
-	if file == null:
-		file = FileAccess.open("user://saveState.json", FileAccess.WRITE)
-		file.store_string(save_template.get_as_text())
-		file.close()
-
-	pass
 
 func getJsonAsDict(PATH: String):
 	var file = FileAccess.open(PATH, FileAccess.READ)
@@ -26,3 +14,15 @@ func getJsonAsDict(PATH: String):
 			print("Unexpected data")
 	else:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+
+
+func _on_pressed() -> void:
+	var save_template = FileAccess.open("res://User/saveState.json", FileAccess.READ)
+
+	var file = FileAccess.open("user://saveState.json", FileAccess.READ)
+
+	file = FileAccess.open("user://saveState.json", FileAccess.WRITE)
+	file.store_string(save_template.get_as_text())
+	file.close()
+
+	pass
