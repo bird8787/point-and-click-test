@@ -6,13 +6,15 @@ extends Button
 
 @onready var item: Dictionary = {
 	"name":itemName,
-	"quantity":number
+	"quantity":number,
+	"spent": "false"
 }
 
 func _on_pressed() -> void:
 	item = {
 		"name":itemName,
-		"quantity":number
+		"quantity":number,
+		"spent": "false"
 	}
+
 	gui_node.addItemToInventory(item)
-	print("gave " + itemName + "x" + str(number) + " to player")

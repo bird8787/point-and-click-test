@@ -2,7 +2,11 @@
 	"inventory": {
 		"puzzlePieces": 0,
 		"items": [
-
+			{
+			"name":"tv",
+			"quantity": 1,
+			"spent": "false"
+			}
 		]
 	},
 	"room": 0

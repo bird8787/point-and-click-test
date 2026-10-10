@@ -54,10 +54,18 @@ func addItemToInventory(item: Dictionary): #grackle script
 	for x in len(inventory["items"]):
 		#do stuff
 		if inventoryToSetTo[x]["name"] == item["name"]:
-			inventoryToSetTo[x]["quantity"] = inventoryToSetTo[x]["quantity"] + item["quantity"]
+			if inventoryToSetTo[x]["quantity"] > item["quantity"] - 1:
+				print("item " + item["name"] + " was empty")
+			else:
+				inventoryToSetTo[x]["quantity"] = inventoryToSetTo[x]["quantity"] + 1
+				print("gave " + item["name"] + " to player")
 			foundMatch = true
+			
+
+	#
 	if not foundMatch:
 		inventoryToSetTo.append(item)
+		print("gave " + item["name"] + " to player")
 	inventory["items"] = inventoryToSetTo
 	generateInventory()
 	pass
@@ -92,8 +100,9 @@ func generateInventory():
 	var screenstuff = ""
 	
 	for item in inventory["items"]:
+		if item["spent"] == "false":
 		#do stuff
-		screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
+			screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
 	if screenstuff == "":
 		screenstuff = "you own NOTHING"
 	#Render Puzzle Piece
