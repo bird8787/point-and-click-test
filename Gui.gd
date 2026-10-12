@@ -2,7 +2,7 @@ extends Control
 
 #inventory
 @onready var inventoryLabel: RichTextLabel = $Inventory
-
+@onready var itemStore: Array = getJsonAsDict("user://saveState.json")["itemStore"]
 
 #puzzlePieces
 @onready var puzzlePiece1: ColorRect = $Inventory/GridContainer/ColorRect
@@ -44,36 +44,54 @@ func autoSave():
 	print(rooms.find(scene_path, 0))
 	print(scene_path)
 	save_state["room"] = rooms.find(scene_path, 0)
+	save_state["itemStore"] = itemStore
 	file.store_string(JSON.stringify(save_state))
 	pass
 
-func addItemToInventory(item: Dictionary): #grackle script
+func addItemToInventory(item: Dictionary, id: int): #grackle script
 	var inventoryToSetTo = inventory["items"]
 	
 	var foundMatch = false
+	#max id of 251
+	var bitSetId = 0
+	
+	if (id / 63) < 63:
+		bitSetId = 0
+	elif (id / 63) < 126:
+		bitSetId = 1
+	elif (id / 63) < 189:
+		bitSetId = 2
+	else:
+		bitSetId = 3
+	var bitSetToUse = (itemStore[bitSetId])
+	print(itemStore, itemStore[bitSetId], " ", typeof(itemStore[bitSetId]))
+	var newBitSet = bitSetToUse
+	id = id % 63
 	for x in len(inventory["items"]):
 		#do stuff
-		if inventoryToSetTo[x]["name"] == item["name"]:
+		if is_bit_active(id, bitSetToUse):
 			print("item " + item["name"] + " was empty")
 			foundMatch = true
-			
 
 	#
 	if not foundMatch:
+		
 		inventoryToSetTo.append(item)
+		newBitSet = setBit.new(id, bitSetToUse).bits
 		print("gave " + item["name"] + " to player")
+	itemStore[bitSetId] = newBitSet
 	inventory["items"] = inventoryToSetTo
 	generateInventory()
 	pass
 
-class PuzzlePieces:
+class setBit:
 	var mask
-	var pieces
+	var bits
 	func _init(index, p):
-		pieces = int(p)
+		bits = int(p)
 		mask = 1 << index
-		if not pieces & mask:
-			pieces = pieces | mask
+		if not bits & mask:
+			bits = bits | mask
 
 func to_binary(intValue: int) -> String:
 	var bin_str: String = ""
@@ -82,8 +100,8 @@ func to_binary(intValue: int) -> String:
 		intValue = intValue >> 1
 	return bin_str
 	
-func is_bit_active(index: int) -> bool:
-	return (int(inventory["puzzlePieces"]) & (1 << index)) > 0
+func is_bit_active(index: int, bitset: int) -> bool:
+	return (bitset & (1 << index)) > 0
 
 var inventory = getJsonAsDict("user://saveState.json")["inventory"]
 
@@ -96,16 +114,16 @@ func generateInventory():
 	var screenstuff = ""
 	
 	for item in inventory["items"]:
-		if item["spent"] == "false":
+		
 		#do stuff
-			screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
+		screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
 	if screenstuff == "":
 		screenstuff = "you own NOTHING"
 	#Render Puzzle Piece
-	puzzlePiece1.color = colors[int(is_bit_active(0))]
-	puzzlePiece2.color = colors[int(is_bit_active(1))]
-	puzzlePiece3.color = colors[int(is_bit_active(2))]
-	puzzlePiece4.color = colors[int(is_bit_active(3))]
+	puzzlePiece1.color = colors[int(is_bit_active(0, int(inventory["puzzlePieces"])))]
+	puzzlePiece2.color = colors[int(is_bit_active(1, int(inventory["puzzlePieces"])))]
+	puzzlePiece3.color = colors[int(is_bit_active(2, int(inventory["puzzlePieces"])))]
+	puzzlePiece4.color = colors[int(is_bit_active(3, int(inventory["puzzlePieces"])))]
 	
 	inventoryLabel.text = screenstuff
 
@@ -113,10 +131,10 @@ func generateInventory():
 func _on_inventory_open() -> void:
 	if inventoryLabel.visible: inventoryLabel.visible = false
 	else: inventoryLabel.visible = true
-	puzzlePiece1.color = colors[int(is_bit_active(0))]
-	puzzlePiece2.color = colors[int(is_bit_active(1))]
-	puzzlePiece3.color = colors[int(is_bit_active(2))]
-	puzzlePiece4.color = colors[int(is_bit_active(3))]
+	puzzlePiece1.color = colors[int(is_bit_active(0,int(inventory["puzzlePieces"])))]
+	puzzlePiece2.color = colors[int(is_bit_active(1,int(inventory["puzzlePieces"])))]
+	puzzlePiece3.color = colors[int(is_bit_active(2,int(inventory["puzzlePieces"])))]
+	puzzlePiece4.color = colors[int(is_bit_active(3,int(inventory["puzzlePieces"])))]
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
