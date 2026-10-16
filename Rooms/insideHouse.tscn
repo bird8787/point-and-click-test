@@ -38,5 +38,5 @@ offset_right = 893.0
 offset_bottom = 437.0
 itemName = "Pillow"
 number = 1
-id = 63
+id = 2
 gui_node = NodePath("../Gui")
