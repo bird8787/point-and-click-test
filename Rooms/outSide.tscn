@@ -11,8 +11,6 @@ position = Vector2(596, 320)
 scale = Vector2(2.8770492, 2.8770492)
 texture = ExtResource("1_7mycd")
 
-[node name="Gui" parent="." unique_id=1374064453 instance=ExtResource("3_h2yge")]
-
 [node name="ChangeScene" type="Button" parent="." unique_id=1813274511 node_paths=PackedStringArray("gui_node")]
 offset_left = 569.0
 offset_top = 309.0
@@ -22,5 +20,7 @@ text = "Go To House"
 script = ExtResource("1_lquwl")
 scene_to_change_to = "res://Rooms/insideHouse.tscn"
 gui_node = NodePath("../Gui")
+
+[node name="Gui" parent="." unique_id=1374064453 instance=ExtResource("3_h2yge")]
 
 [connection signal="pressed" from="ChangeScene" to="ChangeScene" method="_on_pressed"]

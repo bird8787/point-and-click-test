@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bops3nddw0b8f"]
 
 [ext_resource type="Script" uid="uid://cs42wwsq4mwrr" path="res://Gui.gd" id="1_oerka"]
+[ext_resource type="Script" uid="uid://cgriruvi280xu" path="res://v_box_container.gd" id="2_254u1"]
+[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="3_kgk5x"]
 
 [sub_resource type="Theme" id="Theme_oerka"]
 
@@ -63,5 +65,50 @@ offset_bottom = 636.0
 theme_override_font_sizes/font_size = 48
 text = "Open Inventory"
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=239586304]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -38.0
+offset_right = 1242.0
+offset_bottom = 722.0
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 0.34117648)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=843594074]
+layout_mode = 0
+offset_right = 1348.0
+offset_bottom = 754.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1745423533]
+visible = false
+layout_mode = 0
+offset_left = 399.0
+offset_right = 798.0
+offset_bottom = 650.0
+alignment = 1
+script = ExtResource("2_254u1")
+
+[node name="Main Menu" parent="VBoxContainer" unique_id=1954597902 node_paths=PackedStringArray("gui_node") instance=ExtResource("3_kgk5x")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = null
+theme_override_font_sizes/font_size = 48
+text = "Main Menu"
+clip_text = true
+scene_to_change_to = "res://mainMenu.tscn"
+gui_node = NodePath("../..")
+
+[node name="Button2" type="Button" parent="." unique_id=1937144312]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 492.0
+offset_right = 1137.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 64
+text = "***"
+
 [connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="VBoxContainer" method="_on_button_2_pressed"]
