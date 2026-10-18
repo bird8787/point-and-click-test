@@ -3,6 +3,8 @@ extends Control
 #inventory
 @onready var inventoryLabel: RichTextLabel = $Inventory
 @onready var itemStore: Array = getJsonAsDict("user://saveState.json")["itemStore"]
+@onready var diologueStore: Array = getJsonAsDict("user://saveState.json")["diologueStore"]
+
 
 #puzzlePieces
 @onready var puzzlePiece1: ColorRect = $Inventory/GridContainer/ColorRect
@@ -45,21 +47,23 @@ func autoSave():
 	print(scene_path)
 	save_state["room"] = rooms.find(scene_path, 0)
 	save_state["itemStore"] = itemStore
+	save_state["diologueStore"] = diologueStore
+
 	file.store_string(JSON.stringify(save_state))
 	pass
 
-func addItemToInventory(item: Dictionary, id: int): #grackle script
+func addItemToInventory(item: Dictionary, id: int, diologuePath: String): #grackle script
 	var inventoryToSetTo = inventory["items"]
 	
 	var foundMatch = false
 	#max id of 251
 	var bitSetId = 0
 	
-	if (id / 63) < 63:
+	if (id) < 63:
 		bitSetId = 0
-	elif (id / 63) < 126:
+	elif (id) < 126:
 		bitSetId = 1
-	elif (id / 63) < 189:
+	elif (id) < 189:
 		bitSetId = 2
 	else:
 		bitSetId = 3
@@ -72,17 +76,41 @@ func addItemToInventory(item: Dictionary, id: int): #grackle script
 		if is_bit_active(id, bitSetToUse):
 			print("item " + item["name"] + " was empty")
 			foundMatch = true
-
-	#
 	if not foundMatch:
 		
 		inventoryToSetTo.append(item)
 		newBitSet = setBit.new(id, bitSetToUse).bits
 		print("gave " + item["name"] + " to player")
+		if diologuePath != "":
+			displayDiologe(diologuePath, -1)
 	itemStore[bitSetId] = newBitSet
 	inventory["items"] = inventoryToSetTo
 	generateInventory()
 	pass
+func displayDiologe(diologuePath: String, id: int): #grackle script	
+	#max id of 251
+	if id == -1:
+		Dialogic.start(diologuePath)
+	else:
+		var bitSetId = 0
+		
+		if (id) < 63:
+			bitSetId = 0
+		elif (id) < 126:
+			bitSetId = 1
+		elif (id) < 189:
+			bitSetId = 2
+		else:
+			bitSetId = 3
+		var bitSetToUse = (diologueStore[bitSetId])
+		print(diologueStore, diologueStore[bitSetId], " ", typeof(diologueStore[bitSetId]))
+		var newBitSet = bitSetToUse
+		id = id % 63
+		if not is_bit_active(id, bitSetToUse):
+			newBitSet = setBit.new(id, bitSetToUse).bits
+			Dialogic.start(diologuePath)
+		diologueStore[bitSetId] = newBitSet
+
 
 class setBit:
 	var mask

@@ -10,11 +10,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	parallax_2d_3.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 5
 	parallax_2d_2.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 7
 	parallax_2d.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 9
-
 
 	pass
 func getScreenSize():

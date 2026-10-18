@@ -4,6 +4,8 @@ extends Button
 @export var number: int
 @export var id: int
 @export var gui_node: Control
+@export var diologuePath: String
+
 
 @onready var item: Dictionary = {
 	"name":itemName,
@@ -16,4 +18,4 @@ func _on_pressed() -> void:
 		"quantity":number,
 	}
 
-	gui_node.addItemToInventory(item, id)
+	gui_node.addItemToInventory(item, id, diologuePath)
