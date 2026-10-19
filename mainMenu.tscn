@@ -24,7 +24,7 @@ script = ExtResource("3_fy5us")
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D" unique_id=1109095487]
-position = Vector2(734, 335)
+position = Vector2(735, 335)
 scale = Vector2(3, 3)
 texture = ExtResource("8_fy5us")
 
@@ -40,7 +40,7 @@ texture = ExtResource("9_o0ref")
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D3" unique_id=1080859036]
-position = Vector2(734.00006, 336.99997)
+position = Vector2(733.00006, 336.99994)
 scale = Vector2(3, 3)
 texture = ExtResource("8_rdsan")
 
@@ -83,13 +83,5 @@ offset_right = 484.0
 offset_bottom = 403.0
 theme = ExtResource("4_wked4")
 text = "Point And Click Test"
-
-[node name="Control2" type="Control" parent="." unique_id=1622079126]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 579.27905
-offset_top = 325.00003
-offset_right = 619.27905
-offset_bottom = 365.00003
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]
