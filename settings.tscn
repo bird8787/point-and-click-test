@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://svuiy4j06pg6"]
+
+[node name="Settings" type="Control" unique_id=1122731610]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Catagorys" type="VBoxContainer" parent="." unique_id=1244653007]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 224.0
+offset_bottom = 634.0
+
+[node name="Audio" type="Button" parent="Catagorys" unique_id=1522239816]
+layout_mode = 2
+text = "Audio"
+
+[node name="Controls" type="Button" parent="Catagorys" unique_id=1395975740]
+layout_mode = 2
+text = "Controls"
+
+[node name="Visuals" type="Button" parent="Catagorys" unique_id=1162227971]
+layout_mode = 2
+text = "Visuals"

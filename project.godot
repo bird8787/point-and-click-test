@@ -25,15 +25,8 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={
-"TestCharacter": "res://diologe/characters/TestCharacter.dch",
-"You": "res://diologe/characters/You.dch"
-}
-directories/dtl_directory={
-"TestTimeline": "res://diologe/timelines/TestTimeline.dtl",
-"getPillow": "res://diologe/timelines/getPillow.dtl",
-"getTv": "res://diologe/timelines/getTv.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 layout/style_directory={
 "": "res://diologe/styles/DefaultStyle.tres",
 "DefaultStyle": "res://diologe/styles/DefaultStyle.tres"

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://vw844cy36vqi" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" id="8_fy5us"]
 [ext_resource type="Texture2D" uid="uid://dx63228boa1u5" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" id="8_rdsan"]
 [ext_resource type="Texture2D" uid="uid://r1be0nbv075c" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" id="9_o0ref"]
+[ext_resource type="Script" uid="uid://br3m3l8kokeag" path="res://settings.gd" id="11_o0ref"]
 
 [node name="ympstartscene" type="Node2D" unique_id=674439306]
 script = ExtResource("1_w7d22")
@@ -61,7 +62,7 @@ size_flags_vertical = 3
 theme = ExtResource("4_wked4")
 alignment = 1
 
-[node name="Button" parent="VBoxContainer" unique_id=423805827 instance=ExtResource("1_j5mlu")]
+[node name="Enter Game" parent="VBoxContainer" unique_id=423805827 instance=ExtResource("1_j5mlu")]
 layout_mode = 2
 size_flags_vertical = 4
 theme = null
@@ -69,12 +70,17 @@ text = "Enter Game"
 script = ExtResource("2_83s16")
 scene_to_change_to = "res://Rooms/outSide.tscn"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2023154024]
+[node name="Clear Save" type="Button" parent="VBoxContainer" unique_id=2023154024]
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("4_wked4")
 text = "Clear Save"
 script = ExtResource("4_wc2lj")
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1242386998]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("11_o0ref")
 
 [node name="Label" type="Label" parent="." unique_id=949098495]
 offset_left = 26.0
@@ -84,4 +90,5 @@ offset_bottom = 403.0
 theme = ExtResource("4_wked4")
 text = "Point And Click Test"
 
-[connection signal="pressed" from="VBoxContainer/Button2" to="VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Clear Save" to="VBoxContainer/Clear Save" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]
