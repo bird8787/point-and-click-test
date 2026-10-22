@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://svuiy4j06pg6"]
 
 [ext_resource type="Script" uid="uid://cp0griur0ovum" path="res://audio.gd" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://bcn3q3srvto6s" path="res://controls.gd" id="2_3ykye"]
+[ext_resource type="Script" uid="uid://sbtg5d3wqccx" path="res://visuals.gd" id="3_gc0em"]
 
 [node name="Settings" type="Control" unique_id=1122731610]
 layout_mode = 3
@@ -25,10 +27,12 @@ script = ExtResource("1_x2hje")
 [node name="Controls" type="Button" parent="Catagorys" unique_id=1395975740]
 layout_mode = 2
 text = "Controls"
+script = ExtResource("2_3ykye")
 
 [node name="Visuals" type="Button" parent="Catagorys" unique_id=1162227971]
 layout_mode = 2
 text = "Visuals"
+script = ExtResource("3_gc0em")
 
 [node name="Audio Container" type="VBoxContainer" parent="." unique_id=850693849]
 visible = false
@@ -45,4 +49,15 @@ offset_bottom = 555.60803
 layout_mode = 2
 text = "Master Volume"
 
+[node name="Controls Container" type="VBoxContainer" parent="." unique_id=122118952]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Visuals Container" type="VBoxContainer" parent="." unique_id=993099794]
+layout_mode = 0
+offset_right = 40.0
+
 [connection signal="pressed" from="Catagorys/Audio" to="Catagorys/Audio" method="_on_pressed"]
+[connection signal="pressed" from="Catagorys/Controls" to="Catagorys/Controls" method="_on_pressed"]
+[connection signal="pressed" from="Catagorys/Visuals" to="Catagorys/Visuals" method="_on_pressed"]
