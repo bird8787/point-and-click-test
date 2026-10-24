@@ -44,4 +44,3 @@ gui_node = NodePath("../Gui")
 diologuePath = "res://diologe/timelines/getPillow.dtl"
 
 [node name="Gui" parent="." unique_id=1702797095 instance=ExtResource("8_3dyd2")]
-visible = false

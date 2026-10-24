@@ -1,16 +1,29 @@
 extends Node2D
 
 
+func resetUserData():
+	var save_template = FileAccess.open("res://User/saveState.json", FileAccess.READ)
+	var file = FileAccess.open("user://saveState.json", FileAccess.READ)
+	file = FileAccess.open("user://saveState.json", FileAccess.WRITE)
+	file.store_string(save_template.get_as_text())
+	file.close()
 
 
 func _ready():
 	var save_template = FileAccess.open("res://User/saveState.json", FileAccess.READ)
 	var file = FileAccess.open("user://saveState.json", FileAccess.READ)
 	if file == null:
-		file = FileAccess.open("user://saveState.json", FileAccess.WRITE)
-		file.store_string(save_template.get_as_text())
-		file.close()
-
+		resetUserData()
+	
+	#Check Store Version
+	var saveFile = getJsonAsDict("user://saveState.json")
+	var saveTemplateJson = getJsonAsDict("res://User/saveState.json")
+	
+	if saveFile.has("storeVersion"):
+		if saveFile["storeVersion"] != saveTemplateJson["storeVersion"]:
+			resetUserData()
+	else:
+		resetUserData()
 	pass
 
 func getJsonAsDict(PATH: String):

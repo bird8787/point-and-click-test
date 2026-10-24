@@ -48,6 +48,7 @@ func autoSave():
 	save_state["room"] = rooms.find(scene_path, 0)
 	save_state["itemStore"] = itemStore
 	save_state["diologueStore"] = diologueStore
+	save_state["New"] = 0
 
 	file.store_string(JSON.stringify(save_state))
 	pass
@@ -135,6 +136,7 @@ var inventory = getJsonAsDict("user://saveState.json")["inventory"]
 
 func _ready() -> void:
 	inventoryLabel.visible = false
+	autoSave()
 	generateInventory()
 
 

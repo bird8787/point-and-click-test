@@ -7,6 +7,12 @@ extends Button
 
 ]
 
+func _ready():
+	var save = getJsonAsDict("user://saveState.json")
+	if save["New"]:
+		self.disabled = true
+	pass
+
 func _on_pressed() -> void:
 	var save = getJsonAsDict("user://saveState.json")
 	scene_to_change_to = rooms[save["room"]]

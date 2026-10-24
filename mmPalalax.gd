@@ -25,9 +25,7 @@ func getMousePos() -> Vector2:
 	
 	var mouseYI = getScreenSize().y * 0.25 + (getScreenSize().y * 0.75 - getScreenSize().y * 0.25) * (get_viewport().get_mouse_position().y/ getScreenSize().y)
 	var mouseY = clamp(mouseYI, 0, getScreenSize().y)
-	
-	
-	
+
 	return Vector2(mouseX, mouseY)
 
 #interpolation = 
