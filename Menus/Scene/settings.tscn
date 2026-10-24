@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://svuiy4j06pg6"]
 
-[ext_resource type="Script" uid="uid://cp0griur0ovum" path="res://audio.gd" id="1_x2hje"]
-[ext_resource type="Script" uid="uid://bcn3q3srvto6s" path="res://controls.gd" id="2_3ykye"]
-[ext_resource type="Script" uid="uid://sbtg5d3wqccx" path="res://visuals.gd" id="3_gc0em"]
-[ext_resource type="Script" uid="uid://c7a32cr3uaeoj" path="res://close.gd" id="4_gc0em"]
+[ext_resource type="Script" uid="uid://cp0griur0ovum" path="res://Menus/Scripts/Settings/audio.gd" id="1_cb0ai"]
+[ext_resource type="Script" uid="uid://bcn3q3srvto6s" path="res://Menus/Scripts/Settings/controls.gd" id="2_6xjjr"]
+[ext_resource type="Script" uid="uid://sbtg5d3wqccx" path="res://Menus/Scripts/Settings/visuals.gd" id="3_wj5j6"]
+[ext_resource type="Script" uid="uid://c7a32cr3uaeoj" path="res://Menus/Scripts/Settings/close.gd" id="4_vvqmc"]
 
 [node name="Settings" type="Control" unique_id=1122731610]
 layout_mode = 3
@@ -28,23 +28,23 @@ offset_bottom = 634.0
 [node name="Audio" type="Button" parent="Catagorys" unique_id=1522239816]
 layout_mode = 2
 text = "Audio"
-script = ExtResource("1_x2hje")
+script = ExtResource("1_cb0ai")
 
 [node name="Controls" type="Button" parent="Catagorys" unique_id=1395975740]
 layout_mode = 2
 text = "Controls"
-script = ExtResource("2_3ykye")
+script = ExtResource("2_6xjjr")
 
 [node name="Visuals" type="Button" parent="Catagorys" unique_id=1162227971]
 layout_mode = 2
 text = "Visuals"
-script = ExtResource("3_gc0em")
+script = ExtResource("3_wj5j6")
 
 [node name="Close" type="Button" parent="Catagorys" unique_id=687007847]
 layout_mode = 2
 size_flags_vertical = 10
 text = "Close"
-script = ExtResource("4_gc0em")
+script = ExtResource("4_vvqmc")
 
 [node name="Audio Container" type="VBoxContainer" parent="." unique_id=850693849]
 visible = false

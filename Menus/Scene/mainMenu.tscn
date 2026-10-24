@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://rcaehhv1m18u"]
 
-[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://change_scene.tscn" id="1_j5mlu"]
-[ext_resource type="Script" uid="uid://cv3aj7ab36sm" path="res://createSaveState.gd" id="1_w7d22"]
-[ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://load_game.gd" id="2_83s16"]
-[ext_resource type="Script" uid="uid://cdr17as76rde6" path="res://mmPalalax.gd" id="3_fy5us"]
-[ext_resource type="Script" uid="uid://cm2t4ngopmqdx" path="res://clear-save.gd" id="4_wc2lj"]
-[ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://assets/themes/main_menu.tres" id="4_wked4"]
-[ext_resource type="Texture2D" uid="uid://c78e3r5gx8lvt" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" id="7_0ei6b"]
-[ext_resource type="Texture2D" uid="uid://vw844cy36vqi" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" id="8_fy5us"]
-[ext_resource type="Texture2D" uid="uid://dx63228boa1u5" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" id="8_rdsan"]
-[ext_resource type="Texture2D" uid="uid://r1be0nbv075c" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" id="9_o0ref"]
-[ext_resource type="Script" uid="uid://pgjc3w41yc2j" path="res://newGame.gd" id="10_7le7c"]
-[ext_resource type="Script" uid="uid://dfkgs4edbe7ly" path="res://new_game.gd" id="10_efmur"]
-[ext_resource type="Script" uid="uid://br3m3l8kokeag" path="res://settings.gd" id="11_o0ref"]
-[ext_resource type="PackedScene" uid="uid://svuiy4j06pg6" path="res://settings.tscn" id="12_qyr6b"]
-[ext_resource type="Script" uid="uid://mwyr474ufnc" path="res://deny.gd" id="14_ltgao"]
+[ext_resource type="Script" uid="uid://cv3aj7ab36sm" path="res://Menus/Scripts/MainMenu/createSaveState.gd" id="1_iyni4"]
+[ext_resource type="Texture2D" uid="uid://c78e3r5gx8lvt" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" id="2_j1hb8"]
+[ext_resource type="Script" uid="uid://cdr17as76rde6" path="res://Effects/Scripts/Parallax.gd" id="3_iyni4"]
+[ext_resource type="Texture2D" uid="uid://vw844cy36vqi" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" id="4_t8bca"]
+[ext_resource type="Texture2D" uid="uid://r1be0nbv075c" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" id="5_t5bot"]
+[ext_resource type="Texture2D" uid="uid://dx63228boa1u5" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" id="6_rdmh3"]
+[ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://assets/themes/main_menu.tres" id="7_ruq82"]
+[ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://World/Buttons/Scenes/change_scene.tscn" id="8_fpq2e"]
+[ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://Menus/Scripts/MainMenu/load_game.gd" id="9_2y11g"]
+[ext_resource type="Script" uid="uid://pgjc3w41yc2j" path="res://Menus/Scripts/MainMenu/newGame.gd" id="10_iyni4"]
+[ext_resource type="Script" uid="uid://cm2t4ngopmqdx" path="res://Menus/Scripts/MainMenu/clear-save.gd" id="11_yv26u"]
+[ext_resource type="Script" uid="uid://br3m3l8kokeag" path="res://Menus/Scripts/MainMenu/settings.gd" id="12_iyni4"]
+[ext_resource type="Script" uid="uid://dfkgs4edbe7ly" path="res://Menus/Scripts/MainMenu/new_game.gd" id="13_iyni4"]
+[ext_resource type="PackedScene" uid="uid://svuiy4j06pg6" path="res://Menus/Scene/settings.tscn" id="13_j1hb8"]
+[ext_resource type="Script" uid="uid://mwyr474ufnc" path="res://Menus/Scripts/MainMenu/deny.gd" id="14_uu0yw"]
 
 [node name="ympstartscene" type="Node2D" unique_id=674439306]
-script = ExtResource("1_w7d22")
+script = ExtResource("1_iyni4")
 
 [node name="ParallaxDemonWoodsBg" type="Sprite2D" parent="." unique_id=1521536952]
 position = Vector2(579.27905, 325.00003)
 scale = Vector2(2.4115794, 2.4117646)
-texture = ExtResource("7_0ei6b")
-script = ExtResource("3_fy5us")
+texture = ExtResource("2_j1hb8")
+script = ExtResource("3_iyni4")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1414136924]
 scroll_offset = Vector2(0, 72)
@@ -32,7 +32,7 @@ repeat_size = Vector2(1776, 0)
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D" unique_id=1109095487]
 position = Vector2(735, 335)
 scale = Vector2(3, 3)
-texture = ExtResource("8_fy5us")
+texture = ExtResource("4_t8bca")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=134804121]
 scroll_offset = Vector2(0, 72)
@@ -41,7 +41,7 @@ repeat_size = Vector2(1776, 0)
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D2" unique_id=1676714198]
 position = Vector2(732.00006, 338)
 scale = Vector2(3, 3)
-texture = ExtResource("9_o0ref")
+texture = ExtResource("5_t5bot")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=681134144]
 scroll_offset = Vector2(0, 72)
@@ -50,7 +50,7 @@ repeat_size = Vector2(1776, 0)
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D3" unique_id=1080859036]
 position = Vector2(733.00006, 336.99994)
 scale = Vector2(3, 3)
-texture = ExtResource("8_rdsan")
+texture = ExtResource("6_rdmh3")
 
 [node name="Control" type="Control" parent="." unique_id=1071439810]
 layout_mode = 3
@@ -66,44 +66,52 @@ offset_right = 318.0
 offset_bottom = 649.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("4_wked4")
+theme = ExtResource("7_ruq82")
 alignment = 1
 
-[node name="Load Game" parent="VBoxContainer" unique_id=1954597902 instance=ExtResource("1_j5mlu")]
+[node name="Load Game" parent="VBoxContainer" unique_id=1954597902 instance=ExtResource("8_fpq2e")]
 layout_mode = 2
 size_flags_vertical = 4
 theme = null
 text = "Load Game"
-script = ExtResource("2_83s16")
+script = ExtResource("9_2y11g")
 scene_to_change_to = "res://Rooms/outSide.tscn"
 
-[node name="NewGame" parent="VBoxContainer" unique_id=2099631047 instance=ExtResource("1_j5mlu")]
+[node name="NewGame" parent="VBoxContainer" unique_id=2099631047 instance=ExtResource("8_fpq2e")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = null
 text = "New Game"
-script = ExtResource("10_7le7c")
+script = ExtResource("10_iyni4")
 
 [node name="Clear Save" type="Button" parent="VBoxContainer" unique_id=2023154024]
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("4_wked4")
+theme = ExtResource("7_ruq82")
 text = "Clear Save"
-script = ExtResource("4_wc2lj")
+script = ExtResource("11_yv26u")
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=1242386998]
 layout_mode = 2
 text = "Settings"
-script = ExtResource("11_o0ref")
+script = ExtResource("12_iyni4")
 
 [node name="Label" type="Label" parent="." unique_id=949098495]
 offset_left = 26.0
 offset_top = 336.0
 offset_right = 484.0
 offset_bottom = 403.0
-theme = ExtResource("4_wked4")
+theme = ExtResource("7_ruq82")
 text = "Point And Click Test"
+
+[node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("13_j1hb8")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="NewGameConform" type="PanelContainer" parent="." unique_id=126704631]
 visible = false
@@ -131,31 +139,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Conferm" parent="NewGameConform/VBoxContainer/HBoxContainer" unique_id=423805827 instance=ExtResource("1_j5mlu")]
+[node name="Conferm" parent="NewGameConform/VBoxContainer/HBoxContainer" unique_id=423805827 instance=ExtResource("8_fpq2e")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = null
 text = "Yes"
-script = ExtResource("10_efmur")
+script = ExtResource("13_iyni4")
 
-[node name="Deny" parent="NewGameConform/VBoxContainer/HBoxContainer" unique_id=537992841 instance=ExtResource("1_j5mlu")]
+[node name="Deny" parent="NewGameConform/VBoxContainer/HBoxContainer" unique_id=537992841 instance=ExtResource("8_fpq2e")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme = null
 text = "No"
-script = ExtResource("14_ltgao")
-
-[node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("12_qyr6b")]
-visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+script = ExtResource("14_uu0yw")
 
 [connection signal="pressed" from="VBoxContainer/Clear Save" to="VBoxContainer/Clear Save" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]
