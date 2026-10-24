@@ -5,8 +5,13 @@ CORRECT ANY MISSPELLED NAMES
 Authors:
 
   Programming:
+  
     Jay, Anaya
+    
   Writing and Art:
+  
     Lorilie
+    
   Puzzles:
+  
     Rhys
