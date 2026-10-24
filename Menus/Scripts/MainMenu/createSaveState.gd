@@ -1,11 +1,13 @@
 extends Node2D
 
+@onready var load_game: Button = $"VBoxContainer/Load Game"
 
 func resetUserData():
 	var save_template = FileAccess.open("res://User/saveState.json", FileAccess.READ)
 	var file = FileAccess.open("user://saveState.json", FileAccess.READ)
 	file = FileAccess.open("user://saveState.json", FileAccess.WRITE)
 	file.store_string(save_template.get_as_text())
+	load_game.disabled = true
 	file.close()
 
 

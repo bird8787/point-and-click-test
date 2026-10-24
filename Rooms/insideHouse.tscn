@@ -27,10 +27,11 @@ offset_left = 116.0
 offset_top = 247.0
 offset_right = 326.0
 offset_bottom = 369.0
-itemName = "tv"
+itemName = "Tv"
 number = 4
 gui_node = NodePath("../Gui")
 diologuePath = "res://diologe/timelines/getTv.dtl"
+imagePath = "res://assets/items/TvItem.png"
 
 [node name="Pillow" parent="." unique_id=1255802542 node_paths=PackedStringArray("gui_node") instance=ExtResource("5_y7s1v")]
 offset_left = 799.0
@@ -42,5 +43,6 @@ number = 1
 id = 63
 gui_node = NodePath("../Gui")
 diologuePath = "res://diologe/timelines/getPillow.dtl"
+imagePath = "res://assets/items/PillowItem.png"
 
 [node name="Gui" parent="." unique_id=1702797095 instance=ExtResource("8_3dyd2")]

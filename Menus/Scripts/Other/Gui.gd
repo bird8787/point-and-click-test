@@ -13,6 +13,7 @@ extends Control
 @onready var puzzlePiece4: ColorRect = $Inventory/GridContainer/ColorRect4
 #colors
 @onready 	var colors = ["#00000000","#ffffffff"]
+@onready var inventory_visiual: HBoxContainer = $Inventory/ScrollContainer/InventoryVisiual
 
 @onready var rooms = [
 	"res://Rooms/outSide.tscn",
@@ -149,6 +150,8 @@ func generateInventory():
 		screenstuff = screenstuff + item["name"] + " x" + str(int(item["quantity"])) + "\n"
 	if screenstuff == "":
 		screenstuff = "you own NOTHING"
+	screenstuff = ""
+	inventory_visiual.showInventoryChildren(inventory["items"])
 	#Render Puzzle Piece
 	puzzlePiece1.color = colors[int(is_bit_active(0, int(inventory["puzzlePieces"])))]
 	puzzlePiece2.color = colors[int(is_bit_active(1, int(inventory["puzzlePieces"])))]

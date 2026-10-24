@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cbjyj5o4f203t"]
+
+[ext_resource type="Script" uid="uid://wad0jylcvug1" path="res://Menus/Scene/iventory_item.gd" id="1_agvnt"]
+[ext_resource type="Texture2D" uid="uid://bblieuvhyqg1m" path="res://assets/items/PillowItem.png" id="2_agvnt"]
+
+[node name="Panel" type="Panel" unique_id=857242791]
+custom_minimum_size = Vector2(150, 175)
+script = ExtResource("1_agvnt")
+metadata/_edit_horizontal_guides_ = [25.0]
+metadata/_edit_vertical_guides_ = [137.0]
+
+[node name="Control" type="Control" parent="." unique_id=795210410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="ItemImage" type="Sprite2D" parent="Control" unique_id=615507899]
+scale = Vector2(0.11839721, 0.11839721)
+texture = ExtResource("2_agvnt")
+
+[node name="NameLabel" type="Label" parent="." unique_id=144198857]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "--NAME--"
+horizontal_alignment = 1
+
+[node name="QuantityLabel" type="Label" parent="." unique_id=1563077898]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "--QUANTITY--"
+horizontal_alignment = 1

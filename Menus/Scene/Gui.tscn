@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bops3nddw0b8f"]
 
 [ext_resource type="Script" uid="uid://cs42wwsq4mwrr" path="res://Menus/Scripts/Other/Gui.gd" id="1_2fww6"]
+[ext_resource type="Script" uid="uid://b0iryyfvref4e" path="res://Menus/Scene/inventoryBox.gd" id="2_q02uy"]
 [ext_resource type="Script" uid="uid://cgriruvi280xu" path="res://Menus/Scripts/Other/v_box_container.gd" id="2_tvdsj"]
+[ext_resource type="PackedScene" uid="uid://cbjyj5o4f203t" path="res://Menus/Scene/iventoryItem.tscn" id="3_lvdva"]
 [ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://World/Buttons/Scenes/change_scene.tscn" id="3_q02uy"]
 [ext_resource type="Script" uid="uid://b5k8lgni6h7kt" path="res://Menus/Scripts/Other/settingsGui.gd" id="4_2fww6"]
 [ext_resource type="PackedScene" uid="uid://svuiy4j06pg6" path="res://Menus/Scene/settings.tscn" id="5_tvdsj"]
@@ -22,7 +24,6 @@ grow_vertical = 2
 script = ExtResource("1_2fww6")
 
 [node name="Inventory" type="RichTextLabel" parent="." unique_id=969181818]
-visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
@@ -58,6 +59,64 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory" unique_id=1296356548]
+layout_mode = 0
+offset_right = 764.0
+offset_bottom = 216.0
+
+[node name="InventoryVisiual" type="HBoxContainer" parent="Inventory/ScrollContainer" unique_id=1690078242]
+custom_minimum_size = Vector2(2000, 0)
+layout_mode = 2
+script = ExtResource("2_q02uy")
+
+[node name="Panel" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=857242791 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel2" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=822911520 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel3" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1117838089 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel4" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1643488202 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel5" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=260409918 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel6" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=40247340 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel7" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1412721979 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel8" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1208664695 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel9" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1343215812 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel10" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=2035052056 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel11" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=210603696 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel12" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=306901629 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel13" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1743890731 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel14" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=801101805 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel15" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1505558143 instance=ExtResource("3_lvdva")]
+layout_mode = 2
+
+[node name="Panel16" parent="Inventory/ScrollContainer/InventoryVisiual" unique_id=1483260799 instance=ExtResource("3_lvdva")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1128063704]
 layout_mode = 1
@@ -100,7 +159,7 @@ theme = null
 theme_override_font_sizes/font_size = 48
 text = "Save and Quit"
 clip_text = true
-scene_to_change_to = "res://mainMenu.tscn"
+scene_to_change_to = "res://Menus/Scene/mainMenu.tscn"
 gui_node = NodePath("../..")
 
 [node name="Settings" parent="VBoxContainer" unique_id=902179137 instance=ExtResource("3_q02uy")]
