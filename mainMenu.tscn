@@ -105,9 +105,6 @@ offset_bottom = 403.0
 theme = ExtResource("4_wked4")
 text = "Point And Click Test"
 
-[node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("12_qyr6b")]
-visible = false
-
 [node name="NewGameConform" type="PanelContainer" parent="." unique_id=126704631]
 visible = false
 offset_left = 451.0
@@ -151,6 +148,14 @@ size_flags_vertical = 4
 theme = null
 text = "No"
 script = ExtResource("14_ltgao")
+
+[node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("12_qyr6b")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="VBoxContainer/Clear Save" to="VBoxContainer/Clear Save" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]

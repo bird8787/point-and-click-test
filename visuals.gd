@@ -1,7 +1,7 @@
 extends Button
 @onready var visuals_container: VBoxContainer = $"../../Visuals Container"
 @onready var audio_container: VBoxContainer = $"../../Audio Container"
-@onready var controls_container: Button = $"../Controls"
+@onready var controls_container: VBoxContainer = $"../../Controls Container"
 
 
 func _on_pressed() -> void:

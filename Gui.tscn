@@ -98,7 +98,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = null
 theme_override_font_sizes/font_size = 48
-text = "Main Menu"
+text = "Save and Quit"
 clip_text = true
 scene_to_change_to = "res://mainMenu.tscn"
 gui_node = NodePath("../..")
@@ -109,7 +109,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = null
 theme_override_font_sizes/font_size = 48
-text = "Main Menu"
+text = "Settings"
 clip_text = true
 script = ExtResource("4_uv66q")
 
@@ -126,6 +126,6 @@ text = "***"
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="VBoxContainer" method="_on_button_2_pressed"]
