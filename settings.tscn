@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp0griur0ovum" path="res://audio.gd" id="1_x2hje"]
 [ext_resource type="Script" uid="uid://bcn3q3srvto6s" path="res://controls.gd" id="2_3ykye"]
 [ext_resource type="Script" uid="uid://sbtg5d3wqccx" path="res://visuals.gd" id="3_gc0em"]
+[ext_resource type="Theme" uid="uid://ct3signq0mp3x" path="res://assets/themes/settingsTheme.tres" id="4_gc0em"]
 
 [node name="Settings" type="Control" unique_id=1122731610]
 layout_mode = 3
@@ -50,13 +51,24 @@ layout_mode = 2
 text = "Master Volume"
 
 [node name="Controls Container" type="VBoxContainer" parent="." unique_id=122118952]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Visuals Container" type="VBoxContainer" parent="." unique_id=993099794]
+visible = false
 layout_mode = 0
 offset_right = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=768759134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_gc0em")
 
 [connection signal="pressed" from="Catagorys/Audio" to="Catagorys/Audio" method="_on_pressed"]
 [connection signal="pressed" from="Catagorys/Controls" to="Catagorys/Controls" method="_on_pressed"]

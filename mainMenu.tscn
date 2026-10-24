@@ -5,12 +5,13 @@
 [ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://change_scene_menu.gd" id="2_83s16"]
 [ext_resource type="Script" uid="uid://cdr17as76rde6" path="res://mmPalalax.gd" id="3_fy5us"]
 [ext_resource type="Script" uid="uid://cm2t4ngopmqdx" path="res://clear-save.gd" id="4_wc2lj"]
-[ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://main_menu.tres" id="4_wked4"]
+[ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://assets/themes/main_menu.tres" id="4_wked4"]
 [ext_resource type="Texture2D" uid="uid://c78e3r5gx8lvt" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" id="7_0ei6b"]
 [ext_resource type="Texture2D" uid="uid://vw844cy36vqi" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" id="8_fy5us"]
 [ext_resource type="Texture2D" uid="uid://dx63228boa1u5" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" id="8_rdsan"]
 [ext_resource type="Texture2D" uid="uid://r1be0nbv075c" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" id="9_o0ref"]
 [ext_resource type="Script" uid="uid://br3m3l8kokeag" path="res://settings.gd" id="11_o0ref"]
+[ext_resource type="PackedScene" uid="uid://svuiy4j06pg6" path="res://settings.tscn" id="12_qyr6b"]
 
 [node name="ympstartscene" type="Node2D" unique_id=674439306]
 script = ExtResource("1_w7d22")
@@ -22,6 +23,7 @@ texture = ExtResource("7_0ei6b")
 script = ExtResource("3_fy5us")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1414136924]
+scroll_offset = Vector2(0, 72)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D" unique_id=1109095487]
@@ -30,6 +32,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("8_fy5us")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=134804121]
+scroll_offset = Vector2(0, 72)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D2" unique_id=1676714198]
@@ -38,6 +41,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("9_o0ref")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=681134144]
+scroll_offset = Vector2(0, 72)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D3" unique_id=1080859036]
@@ -89,6 +93,9 @@ offset_right = 484.0
 offset_bottom = 403.0
 theme = ExtResource("4_wked4")
 text = "Point And Click Test"
+
+[node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("12_qyr6b")]
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/Clear Save" to="VBoxContainer/Clear Save" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]

@@ -12,10 +12,22 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	parallax_2d_3.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 5
-	parallax_2d_2.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 7
-	parallax_2d.scroll_offset = Vector2(get_viewport().get_mouse_position() - getScreenSize()) / 9
+	parallax_2d_3.scroll_offset = Vector2(getMousePos() - getScreenSize()) / 5
+	parallax_2d_2.scroll_offset = Vector2(getMousePos() - getScreenSize()) / 7
+	parallax_2d.scroll_offset = Vector2(getMousePos() - getScreenSize()) / 9
 
 	pass
 func getScreenSize():
-	return Vector2((0 - Vector2(DisplayServer.screen_get_size()).x / 2), Vector2(DisplayServer.screen_get_size()).y / 4)
+	return Vector2((0 - Vector2(get_viewport().get_visible_rect().size).x), Vector2(get_viewport().get_visible_rect().size).y)
+
+func getMousePos() -> Vector2:
+	var mouseX = clamp(get_viewport().get_mouse_position().x, 0, 0 - getScreenSize().x)
+	
+	var mouseYI = getScreenSize().y * 0.25 + (getScreenSize().y * 0.75 - getScreenSize().y * 0.25) * (get_viewport().get_mouse_position().y/ getScreenSize().y)
+	var mouseY = clamp(mouseYI, 0, getScreenSize().y)
+	
+	
+	
+	return Vector2(mouseX, mouseY)
+
+#interpolation = 
