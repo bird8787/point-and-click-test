@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://rcaehhv1m18u"]
 
 [ext_resource type="Script" uid="uid://cv3aj7ab36sm" path="res://Menus/Scripts/MainMenu/createSaveState.gd" id="1_iyni4"]
-[ext_resource type="Texture2D" uid="uid://c78e3r5gx8lvt" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" id="2_j1hb8"]
 [ext_resource type="Script" uid="uid://cdr17as76rde6" path="res://Effects/Scripts/Parallax.gd" id="3_iyni4"]
-[ext_resource type="Texture2D" uid="uid://vw844cy36vqi" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" id="4_t8bca"]
-[ext_resource type="Texture2D" uid="uid://r1be0nbv075c" path="res://assets/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" id="5_t5bot"]
 [ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://assets/themes/main_menu.tres" id="7_ruq82"]
 [ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://World/Buttons/Scenes/change_scene.tscn" id="8_fpq2e"]
 [ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://Menus/Scripts/MainMenu/load_game.gd" id="9_2y11g"]
@@ -15,11 +12,48 @@
 [ext_resource type="PackedScene" uid="uid://svuiy4j06pg6" path="res://Menus/Scene/settings.tscn" id="13_j1hb8"]
 [ext_resource type="Script" uid="uid://mwyr474ufnc" path="res://Menus/Scripts/MainMenu/deny.gd" id="14_uu0yw"]
 
+[sub_resource type="Gradient" id="Gradient_iyni4"]
+offsets = PackedFloat32Array(0.9481132, 1)
+colors = PackedColorArray(0.022500044, 0, 0.27, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j1hb8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vwwbt"]
+noise = SubResource("FastNoiseLite_j1hb8")
+color_ramp = SubResource("Gradient_iyni4")
+
+[sub_resource type="Gradient" id="Gradient_vwwbt"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.29245284, 0.5566038, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.01079999, 0.13428012, 0.54, 1, 0, 0.5333333, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ad25i"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7sotq"]
+noise = SubResource("FastNoiseLite_ad25i")
+color_ramp = SubResource("Gradient_vwwbt")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_31ng8"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5235849, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.15300001, 0.29240003, 0.85, 1, 0.45, 0.8441667, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gt8l6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hwxm8"]
+noise = SubResource("FastNoiseLite_gt8l6")
+color_ramp = SubResource("Gradient_31ng8")
+seamless = true
+
 [sub_resource type="Gradient" id="Gradient_ht7t7"]
-offsets = PackedFloat32Array(0.19318181, 0.6367925, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.32999998, 0.5198333, 1, 0.54901963, 0.32999998, 0.5198333, 1, 1)
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.047169812, 0.5330189)
+colors = PackedColorArray(0, 0, 0, 0, 0.32999998, 0.5198333, 1, 0, 0.26999998, 0.47683328, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ueaqs"]
+noise_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xnaku"]
 noise = SubResource("FastNoiseLite_ueaqs")
@@ -32,7 +66,7 @@ script = ExtResource("1_iyni4")
 [node name="ParallaxDemonWoodsBg" type="Sprite2D" parent="." unique_id=1521536952]
 position = Vector2(579.27905, 325.00003)
 scale = Vector2(2.4115794, 2.4117646)
-texture = ExtResource("2_j1hb8")
+texture = SubResource("NoiseTexture2D_vwwbt")
 script = ExtResource("3_iyni4")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1414136924]
@@ -40,18 +74,18 @@ scroll_offset = Vector2(0, 72)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D" unique_id=1109095487]
-position = Vector2(735, 335)
-scale = Vector2(3, 3)
-texture = ExtResource("4_t8bca")
+position = Vector2(855, 455.00003)
+scale = Vector2(3.46875, 3.46875)
+texture = SubResource("NoiseTexture2D_7sotq")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=134804121]
 scroll_offset = Vector2(0, 72)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D2" unique_id=1676714198]
-position = Vector2(732.00006, 338)
-scale = Vector2(3, 3)
-texture = ExtResource("5_t5bot")
+position = Vector2(852.0001, 458.00006)
+scale = Vector2(3.4687502, 3.4687502)
+texture = SubResource("NoiseTexture2D_hwxm8")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=681134144]
 scroll_offset = Vector2(0, 72)
@@ -110,10 +144,11 @@ script = ExtResource("12_iyni4")
 
 [node name="Label" type="Label" parent="." unique_id=949098495]
 offset_left = 26.0
-offset_top = 336.0
+offset_top = 313.0
 offset_right = 484.0
-offset_bottom = 403.0
+offset_bottom = 380.0
 theme = ExtResource("7_ruq82")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Point And Click Test"
 
 [node name="Settings" parent="." unique_id=1122731610 instance=ExtResource("13_j1hb8")]
