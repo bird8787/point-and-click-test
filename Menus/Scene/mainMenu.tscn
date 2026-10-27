@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cdr17as76rde6" path="res://Effects/Scripts/Parallax.gd" id="3_iyni4"]
 [ext_resource type="Theme" uid="uid://brobh358q1t3h" path="res://assets/themes/main_menu.tres" id="7_ruq82"]
 [ext_resource type="PackedScene" uid="uid://nnfo5ij8ag6q" path="res://World/Buttons/Scenes/change_scene.tscn" id="8_fpq2e"]
+[ext_resource type="Script" uid="uid://bicvpftugpuo8" path="res://Menus/Scene/exit_game.gd" id="8_moqgf"]
 [ext_resource type="Script" uid="uid://cpmen1fi1snl" path="res://Menus/Scripts/MainMenu/load_game.gd" id="9_2y11g"]
 [ext_resource type="Script" uid="uid://pgjc3w41yc2j" path="res://Menus/Scripts/MainMenu/newGame.gd" id="10_iyni4"]
 [ext_resource type="Script" uid="uid://cm2t4ngopmqdx" path="res://Menus/Scripts/MainMenu/clear-save.gd" id="11_yv26u"]
@@ -37,8 +38,8 @@ seamless = true
 
 [sub_resource type="Gradient" id="Gradient_31ng8"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.5235849, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.15300001, 0.29240003, 0.85, 1, 0.45, 0.8441667, 1, 1)
+offsets = PackedFloat32Array(0, 0.4481132, 0.7028302, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.15300001, 0.29240003, 0.85, 1, 0.10540001, 0.20832002, 0.62, 1, 0.15300001, 0.29240003, 0.85, 0.53333336)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gt8l6"]
 
@@ -49,8 +50,8 @@ seamless = true
 
 [sub_resource type="Gradient" id="Gradient_ht7t7"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.047169812, 0.5330189)
-colors = PackedColorArray(0, 0, 0, 0, 0.32999998, 0.5198333, 1, 0, 0.26999998, 0.47683328, 1, 1)
+offsets = PackedFloat32Array(0, 0.3537736, 0.4764151)
+colors = PackedColorArray(0, 0, 0, 0, 0.26999998, 0.47683328, 1, 1, 0.32999998, 0.5198333, 1, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ueaqs"]
 noise_type = 3
@@ -144,6 +145,12 @@ theme = ExtResource("7_ruq82")
 text = "Settings"
 script = ExtResource("12_iyni4")
 
+[node name="Settings2" type="Button" parent="VBoxContainer" unique_id=547605082]
+layout_mode = 2
+theme = ExtResource("7_ruq82")
+text = "Quit Game"
+script = ExtResource("8_moqgf")
+
 [node name="Label" type="Label" parent="." unique_id=949098495]
 offset_left = 26.0
 offset_top = 313.0
@@ -207,3 +214,4 @@ script = ExtResource("14_uu0yw")
 
 [connection signal="pressed" from="VBoxContainer/Clear Save" to="VBoxContainer/Clear Save" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings2" to="VBoxContainer/Settings2" method="_on_pressed"]
