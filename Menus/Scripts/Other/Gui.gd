@@ -5,12 +5,16 @@ extends Control
 @onready var itemStore: Array = getJsonAsDict("user://saveState.json")["itemStore"]
 @onready var diologueStore: Array = getJsonAsDict("user://saveState.json")["diologueStore"]
 
+@onready var panel_2: Panel = $Panel2
+@onready var panel: Panel = $Panel
+@onready var grid_container: GridContainer = $GridContainer
+
 
 #puzzlePieces
-@onready var puzzlePiece1: ColorRect = $Inventory/GridContainer/ColorRect
-@onready var puzzlePiece2: ColorRect = $Inventory/GridContainer/ColorRect2
-@onready var puzzlePiece3: ColorRect = $Inventory/GridContainer/ColorRect3
-@onready var puzzlePiece4: ColorRect = $Inventory/GridContainer/ColorRect4
+@onready var puzzlePiece1: ColorRect = $GridContainer/ColorRect
+@onready var puzzlePiece2: ColorRect = $GridContainer/ColorRect2
+@onready var puzzlePiece3: ColorRect = $GridContainer/ColorRect3
+@onready var puzzlePiece4: ColorRect = $GridContainer/ColorRect4
 #colors
 @onready 	var colors = ["#00000000","#ffffffff"]
 @onready var inventory_visiual: HBoxContainer = $Inventory/ScrollContainer/InventoryVisiual
@@ -137,6 +141,9 @@ var inventory = getJsonAsDict("user://saveState.json")["inventory"]
 
 func _ready() -> void:
 	inventoryLabel.visible = false
+	panel.visible  = false
+	panel_2.visible = false
+	grid_container.visible = false
 	autoSave()
 	generateInventory()
 
@@ -162,12 +169,24 @@ func generateInventory():
 
 
 func _on_inventory_open() -> void:
-	if inventoryLabel.visible: inventoryLabel.visible = false
-	else: inventoryLabel.visible = true
+	if inventoryLabel.visible: 
+		inventoryLabel.visible = false
+		panel.visible  = false
+		panel_2.visible = false
+		grid_container.visible = false
+	else: 
+		inventoryLabel.visible = true
+		panel.visible  = true
+		panel_2.visible = true
+		grid_container.visible = true
 	puzzlePiece1.color = colors[int(is_bit_active(0,int(inventory["puzzlePieces"])))]
 	puzzlePiece2.color = colors[int(is_bit_active(1,int(inventory["puzzlePieces"])))]
 	puzzlePiece3.color = colors[int(is_bit_active(2,int(inventory["puzzlePieces"])))]
 	puzzlePiece4.color = colors[int(is_bit_active(3,int(inventory["puzzlePieces"])))]
+
+	
+
+
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

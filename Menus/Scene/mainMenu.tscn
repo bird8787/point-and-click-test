@@ -134,11 +134,13 @@ script = ExtResource("10_iyni4")
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("7_ruq82")
-text = "Clear Save"
+text = "Clear Save
+"
 script = ExtResource("11_yv26u")
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=1242386998]
 layout_mode = 2
+theme = ExtResource("7_ruq82")
 text = "Settings"
 script = ExtResource("12_iyni4")
 

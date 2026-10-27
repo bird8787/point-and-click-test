@@ -23,42 +23,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2fww6")
 
-[node name="Inventory" type="RichTextLabel" parent="." unique_id=969181818]
+[node name="Panel2" type="Panel" parent="." unique_id=804675899]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 1133.0
-offset_bottom = 358.0
-mouse_filter = 1
-theme = SubResource("Theme_oerka")
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 786.0
+offset_bottom = 237.0
 
-[node name="GridContainer" type="GridContainer" parent="Inventory" unique_id=1755209712]
+[node name="Panel" type="Panel" parent="." unique_id=851181225]
 layout_mode = 0
-offset_left = 786.0
-offset_top = 18.0
-offset_right = 1086.0
-offset_bottom = 318.0
+offset_left = 807.0
+offset_top = 6.0
+offset_right = 1145.0
+offset_bottom = 342.0
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1755209712]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 25.0
+offset_right = 1125.0
+offset_bottom = 325.0
 columns = 2
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/GridContainer" unique_id=1985956094]
+[node name="ColorRect" type="ColorRect" parent="GridContainer" unique_id=1985956094]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect2" type="ColorRect" parent="Inventory/GridContainer" unique_id=801240398]
+[node name="ColorRect2" type="ColorRect" parent="GridContainer" unique_id=801240398]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect3" type="ColorRect" parent="Inventory/GridContainer" unique_id=1699563579]
+[node name="ColorRect3" type="ColorRect" parent="GridContainer" unique_id=1699563579]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect4" type="ColorRect" parent="Inventory/GridContainer" unique_id=940777633]
+[node name="ColorRect4" type="ColorRect" parent="GridContainer" unique_id=940777633]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Inventory" type="RichTextLabel" parent="." unique_id=969181818]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 1138.0
+offset_bottom = 243.0
+mouse_filter = 1
+theme = SubResource("Theme_oerka")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Inventory" unique_id=1296356548]
 layout_mode = 0
@@ -185,6 +199,6 @@ text = "***"
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_inventory_open"]
 [connection signal="pressed" from="Button2" to="VBoxContainer" method="_on_button_2_pressed"]
