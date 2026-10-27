@@ -65,13 +65,14 @@ seamless = true
 script = ExtResource("1_iyni4")
 
 [node name="ParallaxDemonWoodsBg" type="Sprite2D" parent="." unique_id=1521536952]
-position = Vector2(579.27905, 325.00003)
-scale = Vector2(2.4115794, 2.4117646)
+position = Vector2(1713.0001, 511)
+scale = Vector2(7.4257813, 3.7226563)
 texture = SubResource("NoiseTexture2D_vwwbt")
 script = ExtResource("3_iyni4")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1414136924]
-scroll_offset = Vector2(0, 72)
+scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(0, 177)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D" unique_id=1109095487]
@@ -80,7 +81,8 @@ scale = Vector2(3.46875, 3.46875)
 texture = SubResource("NoiseTexture2D_7sotq")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=134804121]
-scroll_offset = Vector2(0, 72)
+scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(0, 177)
 repeat_size = Vector2(1776, 0)
 
 [node name="ParallaxDemonWoodsCloseTrees" type="Sprite2D" parent="Parallax2D2" unique_id=1676714198]
@@ -89,7 +91,8 @@ scale = Vector2(3.4687502, 3.4687502)
 texture = SubResource("NoiseTexture2D_hwxm8")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=681134144]
-scroll_offset = Vector2(0, 72)
+scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(0, 177)
 repeat_size = Vector2(1776, 0)
 autoscroll = Vector2(5, 0)
 

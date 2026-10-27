@@ -47,7 +47,6 @@ text = "Close"
 script = ExtResource("4_vvqmc")
 
 [node name="Audio Container" type="VBoxContainer" parent="." unique_id=850693849]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.134
@@ -65,6 +64,26 @@ text = "Audio Settings"
 [node name="Master Volume" type="Label" parent="Audio Container" unique_id=1835782785]
 layout_mode = 2
 text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="Audio Container" unique_id=2015330600]
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Audio Container" unique_id=1346621935]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider2" type="HSlider" parent="Audio Container" unique_id=986860959]
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Audio Container" unique_id=1108045969]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider3" type="HSlider" parent="Audio Container" unique_id=2017898934]
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 2
 
 [node name="Controls Container" type="VBoxContainer" parent="." unique_id=122118952]
 visible = false
