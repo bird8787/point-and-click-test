@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bcn3q3srvto6s" path="res://Menus/Scripts/Settings/controls.gd" id="2_6xjjr"]
 [ext_resource type="Script" uid="uid://sbtg5d3wqccx" path="res://Menus/Scripts/Settings/visuals.gd" id="3_wj5j6"]
 [ext_resource type="Script" uid="uid://c7a32cr3uaeoj" path="res://Menus/Scripts/Settings/close.gd" id="4_vvqmc"]
+[ext_resource type="Script" uid="uid://eaewjoy50nk6" path="res://Menus/Scene/MasterVolumeSlider.gd" id="5_6xjjr"]
+[ext_resource type="Script" uid="uid://6xh6gbjm77f6" path="res://Menus/Scene/SFXSlider.gd" id="6_vvqmc"]
+[ext_resource type="Script" uid="uid://d1wj5vbch5fxq" path="res://Menus/Scene/MusicSlider.gd" id="7_6h7s3"]
 
 [node name="Settings" type="Control" unique_id=1122731610]
 layout_mode = 3
@@ -65,25 +68,28 @@ text = "Audio Settings"
 layout_mode = 2
 text = "Master Volume"
 
-[node name="HSlider" type="HSlider" parent="Audio Container" unique_id=2015330600]
+[node name="MasterVolumeSlider" type="HSlider" parent="Audio Container" unique_id=2015330600]
 custom_maximum_size = Vector2(400, 100)
 layout_mode = 2
+script = ExtResource("5_6xjjr")
 
 [node name="SFX" type="Label" parent="Audio Container" unique_id=1346621935]
 layout_mode = 2
 text = "SFX"
 
-[node name="HSlider2" type="HSlider" parent="Audio Container" unique_id=986860959]
+[node name="SFXSlider" type="HSlider" parent="Audio Container" unique_id=986860959]
 custom_maximum_size = Vector2(400, 100)
 layout_mode = 2
+script = ExtResource("6_vvqmc")
 
 [node name="Music" type="Label" parent="Audio Container" unique_id=1108045969]
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider3" type="HSlider" parent="Audio Container" unique_id=2017898934]
+[node name="MusicSlider" type="HSlider" parent="Audio Container" unique_id=2017898934]
 custom_maximum_size = Vector2(400, 100)
 layout_mode = 2
+script = ExtResource("7_6h7s3")
 
 [node name="Controls Container" type="VBoxContainer" parent="." unique_id=122118952]
 visible = false
@@ -115,3 +121,6 @@ text = "Visuals Settings"
 [connection signal="pressed" from="Catagorys/Controls" to="Catagorys/Controls" method="_on_pressed"]
 [connection signal="pressed" from="Catagorys/Visuals" to="Catagorys/Visuals" method="_on_pressed"]
 [connection signal="pressed" from="Catagorys/Close" to="Catagorys/Close" method="_on_pressed"]
+[connection signal="value_changed" from="Audio Container/MasterVolumeSlider" to="Audio Container/MasterVolumeSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Audio Container/SFXSlider" to="Audio Container/SFXSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Audio Container/MusicSlider" to="Audio Container/MusicSlider" method="_on_value_changed"]
