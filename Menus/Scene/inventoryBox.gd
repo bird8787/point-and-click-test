@@ -18,7 +18,7 @@ func showInventoryChildren(inventory: Array):
 			child.visible = false
 		else:
 			var item = inventory[i]
-			child.showItem(item["imagePath"], item["name"], item["quantity"])
+			child.showItem(item["imagePath"], item["name"], item["quantity"], item["look"])
 			child.visible = true
 		i += 1
 	sizeBox()

@@ -30,9 +30,13 @@ directories/dch_directory={
 "You": "res://diologe/characters/You.dch"
 }
 directories/dtl_directory={
+"PillowLook": "res://diologe/items/PillowLook.dtl",
 "TestTimeline": "res://diologe/timelines/TestTimeline.dtl",
+"TvLook": "res://diologe/items/TvLook.dtl",
 "getPillow": "res://diologe/timelines/getPillow.dtl",
-"getTv": "res://diologe/timelines/getTv.dtl"
+"getTv": "res://diologe/timelines/getTv.dtl",
+"noteSheet": "res://diologe/timelines/noteSheet.dtl",
+"noteSheetLook1": "res://diologe/items/noteSheetLook1.dtl"
 }
 layout/style_directory={
 "": "res://diologe/styles/DefaultStyle.tres",
@@ -41,6 +45,7 @@ layout/style_directory={
 layout/style_list=["res://diologe/styles/DefaultStyle.tres"]
 layout/default_style="res://diologe/styles/DefaultStyle.tres"
 variables={}
+glossary/default_case_sensitive=true
 
 [display]
 
