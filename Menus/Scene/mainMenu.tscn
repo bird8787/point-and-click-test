@@ -135,6 +135,7 @@ text = "New Game"
 script = ExtResource("10_iyni4")
 
 [node name="Clear Save" type="Button" parent="VBoxContainer" unique_id=2023154024]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("7_ruq82")

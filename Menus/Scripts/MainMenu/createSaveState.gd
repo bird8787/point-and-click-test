@@ -27,6 +27,9 @@ func _ready():
 	else:
 		resetUserData()
 	pass
+	
+	if saveFile["New"] == 1.0:
+		load_game.disabled = true
 
 func getJsonAsDict(PATH: String):
 	var file = FileAccess.open(PATH, FileAccess.READ)
